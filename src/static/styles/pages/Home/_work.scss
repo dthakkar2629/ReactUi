@@ -1,0 +1,26 @@
+.work {
+    margin: 0 10%;
+    width: 80%;
+    margin-top: 5%;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+}
+
+.imgcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.img-cont {
+    padding: 2%;
+}
+
+.title_work {
+    text-align: center;
+    font-size: xx-large;
+}
