@@ -2,10 +2,13 @@
   width: 100%;
   height: 100vh;
   margin: 0;
-  background-color: #252525;
   // HEADER STYLES START
   .header{
     position: relative;
+    background-image: url('../../../images/7frames.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+
     .player-wrapper {
       position: absolute;
       top: 0;
@@ -57,15 +60,20 @@
     position: absolute;
     color: white;
     @include mmd{
-      padding:10px 80px;
+      padding:60px 80px;
     }
     @include xl{
-      padding:10px 120px;
+      padding:80px 120px;
+    }
+    &__title{
+      text-transform: uppercase;
+      font-size: $xxlarge-font;
     }
     &__red{
       color: $primary-red;
     }
     &__list{
+      margin: 6px 0;
       display: flex;
       align-items: center;
       &__image{
@@ -75,6 +83,7 @@
       }
       &__content{
         color: white;
+        letter-spacing: 4px;
       }
 
     }

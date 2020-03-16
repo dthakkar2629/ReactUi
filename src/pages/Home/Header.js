@@ -20,7 +20,7 @@ export default ({ youtubeId }) => {
                 <ReactPlayer
                     onReady={() => setPlay({...play,start:true})}
                     onProgress={(played)=>{
-                        if(played.playedSeconds>1 && play.visible!==true){
+                        if(played.playedSeconds>2 && play.visible!==true){
                             setPlay({...play, visible: true})
                         }
                     }}
