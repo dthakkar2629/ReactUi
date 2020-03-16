@@ -1,59 +1,38 @@
 import React from 'react';
-import { Row, Col } from 'antd';
+import {
+    Grid,
+    useMediaQuery,
+    Button
+} from '@material-ui/core';
+import { Parallax } from 'react-scroll-parallax';
 
-const work = [
-    {
-        id: 1,
-        "name": "Nasa",
-        "image": "https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.jpg"
-    },
-    {
-        id: 2,
-        "name": "Microsoft",
-        "image": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE2r0Th?ver=5b7d"
-    },
-    {
-        id: 3,
-        "name": "Phillips",
-        "image": "https://logos-download.com/wp-content/uploads/2016/03/Philips_logo_logotype_emblem.png"
-    },
-    {
-        id: 4,
-        "name": "Fox",
-        "image": "https://cdn.dribbble.com/users/1543347/screenshots/6292805/dribbble.png"
-    },
-    {
-        id: 5,
-        "name": "Sony",
-        "image": "https://1000logos.net/wp-content/uploads/2019/08/Sony-Logo-1961%E2%80%931962.jpg"
-    },
-    {
-        id: 6,
-        "name": "IBM",
-        "image": "https://www.ibm.com/innovate/branding/logoartwork/logoartwork.nsf/IBM_logoRR_pos_RGB.gif"
-    }
-]
-
+import arrow from 'static/images/icons/forward-arrow.svg';
+import parallaxImage from 'static/images/parallax-foreground.jpg';
 const Work = () => {
     return (
         <div className="work">
-            <h2 className="title_work">Work</h2>
-            <div className="imgcontainer">
-            {
-                work.map((work_grid) => {
-                    return (
-                        <div className="img-cont" key={work_grid.id}>
-                            <h4>{work_grid.name}</h4>
-                            <img src={work_grid.image} />
-                        </div>
+            <Grid
+                container
+                className="work__container"
+                spacing={4}
+                direction="row"
+                justify="flex-end"
+                alignItems="center"
+            >
+                <Parallax className="work__parallax__container" y={[0, -20]} tagOuter="figure">
+                    <Grid className="work__parallax" item xs={12} md={6}>
+                        <img style={{width: '100%'}} src={parallaxImage} alt="7Frames Work" />
+                    </Grid>
+                </Parallax>
 
-                    )
-                })
-
-            }
-            </div>
-
-
+                <Grid className="work__content" item xs={12} md={6}>
+                    <div>
+                        <h2 className="work__title">Our <b className="work__red">W</b>ork</h2>
+                        <p className="work__content__text">Transforming stories into visually rich and relatable experiences in most effective content formats.</p>
+                        <Button className="work__button">View workfolio <img className="work__arrow" src={arrow} alt="arrow" /></Button>
+                    </div>
+                </Grid>
+            </Grid>
         </div>
     )
 }

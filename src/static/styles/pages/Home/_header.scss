@@ -90,4 +90,105 @@
   }
 
   // ABOUT STYLES END
+
+  // WORK STYLES START
+
+  .work {
+    &__red{
+      @extend .about__red;
+    }
+    &__title{
+      @extend .about__title;
+      @include mmd{
+        padding-left: 160px;
+      }
+    }
+    &__parallax__container{
+      position: relative;
+    }
+    &__parallax{
+      max-width: 100%;
+      @include mmd{
+        max-width: calc(50% + 140px);
+      }
+    }
+    &__container{
+      margin: 0;
+      width: 100%;
+      position: relative;
+    }
+    &__content{
+      @extend .container;
+      background-color: $primary-purple;
+      color: white;
+      @include mmd{
+        position: absolute;
+        width: 50%;
+        top: 0;
+        height: 80vh;
+        z-index: -1;
+        border-bottom-left-radius: 12px;
+      }
+      &__text{
+        margin-top: 16px;
+        margin-bottom: 12px;
+        @include mmd{
+          padding-left: 160px;
+          max-width: 700px;
+          font-size: $title-font;
+        }
+      }
+    }
+    &__button{
+      background-color: white;
+      border-radius: 8px;
+      color: $primary-black;
+      text-transform: capitalize;
+      @include mmd{
+        margin-left: 160px;
+        font-size: $subtitle-font;
+      }
+    }
+    &__arrow{
+      @extend .about__list__image;
+      margin-right: 0;
+      margin-left: 6px;
+      @include mmd{
+        width: 15px;
+        height: 15px;
+
+      }
+    }
+  }
+
+  // WORK STYLES END
+
+  // DIVIDER STYLES START
+
+
+  .divider{
+    padding: 12px 0;
+    min-height: 30vh;
+    position: relative;
+    @include mmd{
+      min-height: 50vh;
+      padding: 24px 0;
+    }
+    &__image{
+      max-width: 50%;
+    }
+    &__title{
+      position: absolute;
+      top: 30%;
+      left: 40%;
+      font-size: $subtitle-font;
+      color: $primary-purple;
+      @include mmd{
+        font-size: $xxlarge-font;
+        top: 50%;
+      }
+    }
+  }
+
+  // DIVIDER STYLES END
 }
