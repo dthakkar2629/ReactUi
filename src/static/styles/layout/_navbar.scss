@@ -1,0 +1,69 @@
+#navbar{
+    font-weight: $bold-font;
+    @include msm{
+        padding-top: 10px;
+    }
+    .MuiToolbar-gutters{
+        padding: 0;
+    }
+    padding:10px 16px;
+    @include mmd{
+        padding:10px 80px;
+    }
+    @include xl{
+        padding:10px 120px;
+    }
+    .logo-container{
+        &:hover{
+            background-color: transparent;
+        }
+        .logo{
+            height: auto;
+            width: 90px;
+            @include mmd{
+                width: 120px;
+            }
+            @include xl{
+                width: 160px;
+            }
+            @include xxl{
+                width: 180px;
+            }
+            @include xxxl{
+                width: 220px;
+            }
+        }
+    }
+    .grow{
+        display: flex;
+        flex-grow: 1;
+    }
+    .menu-button{
+        .MuiSvgIcon-root{
+            font-size: 1.8rem;
+        }
+        img{
+            width: 20px;
+            @include msm{
+                width: 25px;
+            }
+            @include xxl{
+                width: 28px;
+            }
+            @include xxxl{
+                width: 28px;
+            }
+        }
+        img.cancel-button{
+            @include msm{
+                width: 25px;
+            }
+            @include xxl{
+                width: 18px;
+            }
+            @include xxxl{
+                width: 28px;
+            }
+        }
+    }
+}
