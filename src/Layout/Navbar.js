@@ -86,7 +86,7 @@ export default function Navbar(props) {
                 <Toolbar>
                     <NavLink exact to="/"><Button className="logo-container"><img style={{ transition: '1s ease' }} className="logo" width="200" height="auto" src={navBackground  ? logo :isTabletOrMobile? logo:logoWhite} alt="Pinxitblue" /></Button></NavLink>
                     <div className="grow" />
-                    <IconButton onClick={openMenu} edge="start" className="menu-button" color="inherit" aria-label="menu">
+                    <IconButton edge="start" className="menu-button" color="inherit" aria-label="menu">
                         <img src={menu} width="25" alt="Menu Burger" />
                     </IconButton>
                 </Toolbar>
