@@ -8,7 +8,7 @@ import {
     IconButton,
     useMediaQuery
 } from '@material-ui/core';
-
+import NavMenu from './Menu';
 
 import menu from 'static/images/icons/menu.svg';
 import logo from 'static/images/7frames.svg';
@@ -41,7 +41,7 @@ export default function Navbar(props) {
 
     const [navBackground, setNavBackground] = useState(false);
     const [navMenu, setNavmenu] = useState(false);
-    const isTabletOrMobile = useMediaQuery('(max-width: 600px)' );
+    const isTabletOrMobile = useMediaQuery('(max-width: 600px)');
 
     const navRef = useRef();
     navRef.current = navBackground;
@@ -53,14 +53,14 @@ export default function Navbar(props) {
                 setNavBackground(show)
             }
         }
-        let bod= document.getElementsByTagName('BODY')[0];
-        let htm= document.getElementsByTagName('html');
-        
-        if(navMenu){
-            bod.style.overflow='hidden';
+        let bod = document.getElementsByTagName('BODY')[0];
+        let htm = document.getElementsByTagName('html');
+
+        if (navMenu) {
+            bod.style.overflow = 'hidden';
         }
-        else{
-            bod.style.overflow='unset';
+        else {
+            bod.style.overflow = 'unset';
         }
         document.addEventListener('scroll', handleScroll)
         return () => {
@@ -68,31 +68,37 @@ export default function Navbar(props) {
         }
     }, [])
 
-    const openMenu = () =>{
+    const openMenu = () => {
         setNavmenu(true);
     }
+
+    useEffect(() => {
+        console.log(navMenu);
+    }, [navMenu])
 
 
     return (
         <React.Fragment>
-            
-        {navMenu!==true &&
-            <HideonScroll {...props}>
-            <AppBar
-                position="fixed"
-                style={{ backgroundColor: `${navBackground ? 'white' :isTabletOrMobile? 'white':'transparent'}`, transition: '1s ease' }}
-                id="navbar"
-            >
-                <Toolbar>
-                    <NavLink exact to="/"><Button className="logo-container"><img style={{ transition: '1s ease' }} className="logo" width="200" height="auto" src={navBackground  ? logo :isTabletOrMobile? logo:logoWhite} alt="Pinxitblue" /></Button></NavLink>
-                    <div className="grow" />
-                    <IconButton edge="start" className="menu-button" color="inherit" aria-label="menu">
-                        <img src={menu} width="25" alt="Menu Burger" />
-                    </IconButton>
-                </Toolbar>
-            </AppBar>
-        </HideonScroll>
-        }
+
+            {navMenu !== true &&
+                <HideonScroll {...props}>
+                    <AppBar
+                        position="fixed"
+                        style={{ backgroundColor: `${navBackground ? 'white' : isTabletOrMobile ? 'white' : 'transparent'}`, transition: '1s ease' }}
+                        id="navbar"
+                    >
+                        <Toolbar>
+                            <NavLink exact to="/"><Button className="logo-container"><img style={{ transition: '1s ease' }} className="logo" width="200" height="auto" src={navBackground ? logo : isTabletOrMobile ? logo : logoWhite} alt="Pinxitblue" /></Button></NavLink>
+                            <div className="grow" />
+                            <IconButton onClick={openMenu} edge="start" className="menu-button" color="inherit" aria-label="menu">
+                                <img src={menu} width="25" alt="Menu Burger" />
+                            </IconButton>
+                        </Toolbar>
+                    </AppBar>
+                </HideonScroll>
+            }
+
+            <NavMenu setNavmenu={setNavmenu} navMenu={navMenu} />
 
 
         </React.Fragment>

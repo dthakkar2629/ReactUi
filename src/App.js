@@ -5,7 +5,7 @@ import {
   Switch
 } from 'react-router-dom';
 
-import Home from './pages/Home';
+import Home from './pages/Home/index.js';
 
 function App() {
   return (

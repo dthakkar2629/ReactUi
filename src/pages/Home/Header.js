@@ -37,8 +37,8 @@ export default ({ youtubeId }) => {
                     // url={`https://vimeo.com/144952248`}
                     controls={false}
                     playIcon={null}
-                    playing={play.start}
-                    loop={true}
+                    // playing={play.start}
+                    loop={false}
                     vimeoConfig={{ 
                         controls: false, 
                         responsive: true, 
